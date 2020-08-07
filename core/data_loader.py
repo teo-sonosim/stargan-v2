@@ -54,16 +54,43 @@ class ReferenceDataset(data.Dataset):
         self.transform = transform
 
     def _make_dataset(self, root):
+        """ ['male', 'female'] """
         domains = os.listdir(root)
+
         fnames, fnames2, labels = [], [], []
+        """ 
+        [(0, 'female'),
+         (1, 'male')] 
+         """
         for idx, domain in enumerate(sorted(domains)):
             class_dir = os.path.join(root, domain)
+
+            """
+            [PosixPath('data/celeba_hq/train/female/065084.jpg'), 
+            PosixPath('data/celeba_hq/train/female/141640.jpg')]
+            """
             cls_fnames = listdir(class_dir)
+
+            # append to running lists
             fnames += cls_fnames
             fnames2 += random.sample(cls_fnames, len(cls_fnames))
             labels += [idx] * len(cls_fnames)
-        return list(zip(fnames, fnames2)), labels
 
+            """ return dataset [tuple]; 
+                dataset[0] => fname, fname2
+                dataset[1] => label
+            (   
+                # (x, x') [tuple]; dataset [0][0]
+                # e.g. female to some other random female 
+                (PosixPath('data/celeba_hq/train/female/065084.jpg'), 
+                PosixPath('data/celeba_hq/train/female/087742.jpg')),
+                
+                # class label [scalar]; dataset[0][1]
+                # e.g. 0 == female
+                0 
+            )
+            """
+        return list(zip(fnames, fnames2)), labels
     def __getitem__(self, index):
         fname, fname2 = self.samples[index]
         label = self.targets[index]
