@@ -24,6 +24,11 @@ clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
 
+.PHONY: lint 
+## Lint using pre-commit hooks (see .pre-commit-config.yaml)
+lint:
+	tox -e lint
+
 .PHONY: provision_environment
 ## Set up python interpreter environment
 provision_environment:
