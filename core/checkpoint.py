@@ -9,6 +9,7 @@ Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 """
 
 import os
+
 import torch
 
 
@@ -23,7 +24,7 @@ class CheckpointIO(object):
 
     def save(self, step):
         fname = self.fname_template.format(step)
-        print('Saving checkpoint into %s...' % fname)
+        print("Saving checkpoint into %s..." % fname)
         outdict = {}
         for name, module in self.module_dict.items():
             outdict[name] = module.state_dict()
@@ -31,11 +32,11 @@ class CheckpointIO(object):
 
     def load(self, step):
         fname = self.fname_template.format(step)
-        assert os.path.exists(fname), fname + ' does not exist!'
-        print('Loading checkpoint from %s...' % fname)
+        assert os.path.exists(fname), fname + " does not exist!"
+        print("Loading checkpoint from %s..." % fname)
         if torch.cuda.is_available():
             module_dict = torch.load(fname)
         else:
-            module_dict = torch.load(fname, map_location=torch.device('cpu'))
+            module_dict = torch.load(fname, map_location=torch.device("cpu"))
         for name, module in self.module_dict.items():
             module.load_state_dict(module_dict[name])

@@ -51,7 +51,7 @@ bash download.sh pretrained-network-afhq
 
 
 ## Generating interpolation videos
-After downloading the pre-trained networks, you can synthesize output images reflecting diverse styles (e.g., hairstyle) of reference images. The following commands will save generated images and interpolation videos to the `expr/results` directory. 
+After downloading the pre-trained networks, you can synthesize output images reflecting diverse styles (e.g., hairstyle) of reference images. The following commands will save generated images and interpolation videos to the `expr/results` directory.
 
 
 <b>CelebA-HQ.</b> To generate images and interpolation videos, run the following command:
@@ -118,7 +118,7 @@ Note that the evaluation metrics are calculated using random latent vectors or r
 
 
 ## Training networks
-To train StarGAN v2 from scratch, run the following commands. Generated images and network checkpoints will be stored in the `expr/samples` and `expr/checkpoints` directories, respectively. Training takes about three days on a single Tesla V100 GPU. Please see [here](https://github.com/clovaai/stargan-v2/blob/master/main.py#L86-L179) for training arguments and a description of them. 
+To train StarGAN v2 from scratch, run the following commands. Generated images and network checkpoints will be stored in the `expr/samples` and `expr/checkpoints` directories, respectively. Training takes about three days on a single Tesla V100 GPU. Please see [here](https://github.com/clovaai/stargan-v2/blob/master/main.py#L86-L179) for training arguments and a description of them.
 
 ```bash
 # celeba-hq
@@ -146,9 +146,9 @@ bash download.sh afhq-dataset
 ```
 
 ## License
-The source code, pre-trained models, and dataset are available under [Creative Commons BY-NC 4.0](https://github.com/clovaai/stargan-v2/blob/master/LICENSE) license by NAVER Corporation. You can **use, copy, tranform and build upon** the material for **non-commercial purposes** as long as you give **appropriate credit** by citing our paper, and indicate if changes were made. 
+The source code, pre-trained models, and dataset are available under [Creative Commons BY-NC 4.0](https://github.com/clovaai/stargan-v2/blob/master/LICENSE) license by NAVER Corporation. You can **use, copy, tranform and build upon** the material for **non-commercial purposes** as long as you give **appropriate credit** by citing our paper, and indicate if changes were made.
 
-For business inquiries, please contact clova-jobs@navercorp.com.<br/>	
+For business inquiries, please contact clova-jobs@navercorp.com.<br/>
 For technical and other inquires, please contact yunjey.choi@navercorp.com.
 
 

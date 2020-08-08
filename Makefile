@@ -18,13 +18,13 @@ CONDA_ACTIVATE=source $$(conda info --base)/etc/profile.d/conda.sh ; conda activ
 # COMMANDS                                                                      #
 #################################################################################
 
-.PHONY: lint 
+.PHONY: lint
 ## Delete all compiled Python files
 clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
 
-.PHONY: lint 
+.PHONY: lint
 ## Lint using pre-commit hooks (see .pre-commit-config.yaml)
 lint:
 	tox -e lint
