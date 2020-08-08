@@ -20,7 +20,7 @@ networkx==2.4             # via scikit-image
 numpy==1.19.1             # via imageio, matplotlib, opencv-python, pywavelets, scipy
 opencv-python==4.1.2.30   # via -r requirements.in
 packaging==20.4           # via tox
-pillow==7.0.0             # via -r requirements.in, imageio, matplotlib, scikit-image
+pillow==7.1.0             # via -r requirements.in, imageio, matplotlib, scikit-image
 pluggy==0.13.1            # via tox
 py==1.9.0                 # via tox
 pyparsing==2.4.7          # via matplotlib, packaging
