@@ -6,6 +6,9 @@ repos:
     hooks:
       - id: bandit
         language_version: python3.6
+        args:
+          - -s
+          - B101,B311
 
   # For IDE-integration outside of the pre-commit hook,
   # see: https://black.readthedocs.io/en/stable/editor_integration.html
