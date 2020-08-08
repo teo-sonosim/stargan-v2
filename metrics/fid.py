@@ -9,7 +9,6 @@ Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 """
 
 import argparse
-import os
 
 import numpy as np
 import torch

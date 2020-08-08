@@ -77,8 +77,8 @@ def calculate_metrics(nets, args, step, mode):
                         s_trg = nets.mapping_network(z_trg, y_trg)
                     else:
                         try:
-                            x_ref = next(iter_ref).to(device)
-                        except:
+                            x_ref = next(iter_ref).to(device)  # noqa: F821
+                        except:  # noqa: E722
                             iter_ref = iter(loader_ref)
                             x_ref = next(iter_ref).to(device)
 
