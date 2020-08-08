@@ -38,15 +38,15 @@ We provide a script to download datasets used in StarGAN v2 and the correspondin
 
 <b>CelebA-HQ.</b> To download the [CelebA-HQ](https://drive.google.com/drive/folders/0B4qLcYyJmiz0TXY1NG02bzZVRGs) dataset and the pre-trained network, run the following commands:
 ```bash
-bash download.sh celeba-hq-dataset
-bash download.sh pretrained-network-celeba-hq
-bash download.sh wing
+bash download celeba-hq-dataset
+bash download pretrained-network-celeba-hq
+bash download wing
 ```
 
 <b>AFHQ.</b> To download the [AFHQ](https://github.com/clovaai/stargan-v2/blob/master/README.md#animal-faces-hq-dataset-afhq) dataset and the pre-trained network, run the following commands:
 ```bash
-bash download.sh afhq-dataset
-bash download.sh pretrained-network-afhq
+bash download afhq-dataset
+bash download pretrained-network-afhq
 ```
 
 
@@ -142,7 +142,7 @@ We release a new dataset of animal faces, Animal Faces-HQ (AFHQ), consisting of 
 
 
 ```bash
-bash download.sh afhq-dataset
+bash download afhq-dataset
 ```
 
 ## License
