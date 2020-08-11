@@ -43,7 +43,12 @@ endif
 		conda install -y pytorch=1.4.0 torchvision=0.5.0 -c pytorch; \
 		conda install -y x264=='1!152.20180717' ffmpeg=4.0.2 -c conda-forge; \
 		pip install -r requirements.txt)
-	@echo ">>> New conda env created. Activate with:\nconda activate $(PROJECT_NAME)"
+	@echo ">>> New conda env created. Activate with:"
+ifeq ($(OS_NAME),Windows_NT)
+	@echo "source activate $(PROJECT_NAME)"
+else
+	@echo "conda activate $(PROJECT_NAME)"
+endif
 else
 	@echo ">>> Error: please install conda before running this target"
 endif
